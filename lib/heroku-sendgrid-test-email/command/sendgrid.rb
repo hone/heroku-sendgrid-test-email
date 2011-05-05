@@ -1,6 +1,11 @@
 require 'heroku/command/base'
 
+# helper commands for sendgrid
 class Heroku::Command::Sendgrid < Heroku::Command::Base
+  # sendgrid:test_email to=me@example.com
+  #
+  # send a test email to see if the ENV vars are setup properly
+  #
   def test_email
     app  = extract_app
     vars = heroku.config_vars(app)
